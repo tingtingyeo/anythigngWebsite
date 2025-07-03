@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+.background-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    opacity: 0.85;
+    filter: blur(2px) brightness(0.8);
+}
+.container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    animation: fadeInDown 1s;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 0;
+}
+.header .wave {
+    font-size: 2.5rem;
+    animation: wave 2s infinite;
+}
+@keyframes wave {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(20deg); }
+}
+.tourism-content {
+    background: rgba(0, 0, 0, 0.4);
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: fadeInUp 1.2s;
+    color: #fff;
+}
+.destinations {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.25);
+    overflow: hidden;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #fff;
+    animation: fadeInCard 1.5s;
+}
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+.card h3 {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+.card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+@keyframes fadeInCard {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+.chatbot-container {
+    margin: 2rem auto 0 auto;
+    max-width: 420px;
+    min-width: 320px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(30,60,114,0.18);
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    animation: fadeInUp 1.2s;
+}
+.chatbot-container iframe {
+    border: none;
+    border-radius: 14px;
+    width: 100%;
+    min-height: 400px;
+    background: #fff;
+}
+@media (max-width: 600px) {
+    .chatbot-container {
+        max-width: 98vw;
+        min-width: 0;
+        padding: 0.2rem;
+    }
+    .chatbot-container iframe {
+        min-height: 320px;
+    }
+}
