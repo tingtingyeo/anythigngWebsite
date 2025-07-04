@@ -24,17 +24,21 @@ body {
     justify-content: center;
 }
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    animation: fadeInDown 1s;
+    /* Remove background and border for transparent look */
+    background: transparent !important;
+    border: none !important;
+    color: #fff;
     font-size: 2.5rem;
     font-weight: bold;
-    letter-spacing: 2px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2rem 0;
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 16px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Optionally, add a subtle text shadow for readability */
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.18);
 }
 .header .wave {
     font-size: 2.5rem;
@@ -95,7 +99,7 @@ body {
 }
 .chatbot-container {
     margin: 2rem auto 0 auto;
-    max-width: 420px;
+    max-width: 700px;
     min-width: 320px;
     background: rgba(255,255,255,0.95);
     border-radius: 18px;
@@ -121,6 +125,41 @@ body {
     object-fit: cover;
     object-position: center;
     display: block;
+}
+.chatbot-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #000;
+}
+.chatbot-response {
+    color: #000;
+    margin-top: 1rem;
+    font-size: 1rem;
+    min-height: 2em;
+}
+.custom-chatbot {
+    width: 100%;
+    box-sizing: border-box;
+}
+.chatbot-input-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+#user-question {
+    flex: 1;
+    padding: 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid #e0e0e0;
+    font-size: 1.1rem;
+    min-width: 0;
+    width: 100%;
+    min-height: 2.5em;
+    box-sizing: border-box;
+}
+#send-btn {
+    height: 3em;
+    align-self: flex-end;
 }
 @media (max-width: 600px) {
     .chatbot-container {

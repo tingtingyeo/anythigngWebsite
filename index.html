@@ -33,7 +33,7 @@
             <div id="huggingface-container" class="chatbot-container">
                 <div class="custom-chatbot">
                     <div class="chatbot-header">
-                        <span class="chatbot-title">Ask Singapling AI</span>
+                        <span class="chatbot-title">Ask Anythingg AI</span>
                     </div>
                     <div class="chatbot-input-row">
                         <input type="text" id="user-question" placeholder="Type your question..." />
@@ -50,7 +50,7 @@
     async function query(data) {
         // TODO: Replace YOUR_SPACE and YOUR_CHATFLOW_ID with your own values below
         const response = await fetch(
-            "https://YOUR_SPACE.hf.space/api/v1/prediction/YOUR_CHATFLOW_ID",
+            "https://tingtingyeo-flowise.hf.space/api/v1/prediction/ee69cb56-0000-48d5-9a32-9c92d6fdc91b",
             {
                 method: "POST",
                 headers: {
@@ -68,7 +68,13 @@
         responseDiv.textContent = 'Thinking...';
         try {
             const result = await query({ question });
-            responseDiv.textContent = result.answer || JSON.stringify(result);
+            // Quick fix: format line breaks and bold markers
+            let formatted = (result.text || JSON.stringify(result))
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+                .replace(/\*/g, '')
+                .replace(/_/g, '');
+            responseDiv.innerHTML = formatted;
         } catch (e) {
             responseDiv.textContent = 'Sorry, there was an error connecting to the AI.';
         }
