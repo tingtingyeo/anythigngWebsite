@@ -6,6 +6,16 @@ body {
     position: relative;
     overflow-x: hidden;
 }
+
+.image-container {
+      display: flex;
+}
+.image_container {
+      flex: 0 0 30%;
+      margin-right: 20px;
+}
+
+
 .background-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -172,10 +182,32 @@ body {
     }
 }
 
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+}
 .logo-icon {
-    width: 40px;
-    height: 40px;
-    vertical-align: middle;
-    margin-right: 10px;
-    border-radius: 50%; /* Optional: makes it circular */
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.agency-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 12px;
+  letter-spacing: 1px;
+}
+.wave {
+  font-size: 2.2rem;
+  margin-left: 8px;
 }
