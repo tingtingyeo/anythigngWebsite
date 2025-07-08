@@ -66,3 +66,83 @@ header img {
     margin-top: 1rem;
     min-height: 2rem;
 }
+
+
+
+/* Chatbot styling */
+        .chatbot-wrapper {
+            position: fixed;
+            right: 20px;
+            bottom: 100px;
+            width: 400px;
+            height: 600px;
+            z-index: 1002;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        #chat-messages {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(145deg, #8B0000, #FFD700);
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #8B0000, #FFD700);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            font-size: 24px;
+            border: none;
+        }
+
+        .chatbot-wrapper.hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .chatbot-wrapper {
+                width: 100%;
+                height: 100%;
+                right: 0;
+                bottom: 0;
+                border-radius: 0;
+            }
+        }
+
+        .code-example {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }

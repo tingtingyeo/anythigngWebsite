@@ -5,15 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vietnam - Anythingg Tourism Agency</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Vietnam-specific styling */
+        body {
+            background: linear-gradient(135deg, #d4af37 0%, #8B0000 25%, #FFD700 50%, #008B00 75%, #d4af37 100%);
+        }
+        
+        .background-overlay {
+            background: linear-gradient(120deg, rgba(139, 0, 0, 0.7) 0%, rgba(255, 215, 0, 0.6) 50%, rgba(0, 139, 0, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            opacity: 0.9;
+        }
+
+        .vietnam-theme {
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(139, 0, 0, 0.2);
+        }
+
+        .vietnam-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(139, 0, 0, 0.1));
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .vietnam-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(139, 0, 0, 0.5);
+        }
+
+        .vietnam-subtitle {
+            font-size: 1.2rem;
+            color: #fff;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .vietnam-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-item h3 {
+            color: #FFD700;
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        .vietnam-card {
+            background: linear-gradient(145deg, rgba(139, 0, 0, 0.2), rgba(255, 215, 0, 0.1));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .vietnam-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+            border-color: #FFD700;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .vietnam-hanoi {
+            background-image: url('https://images.unsplash.com/photo-1509552484343-d1c9e98d63ff?auto=format&fit=crop&w=400&q=80');
+        }
+
+        .vietnam-halong {
+            background-image: url('https://images.unsplash.com/photo-1555518633-0c70a7b82e99?auto=format&fit=crop&w=400&q=80');
+        }
+
+        .vietnam-hoian {
+            background-image: url('https://images.unsplash.com/photo-1541451378359-acdede43fdf4?auto=format&fit=crop&w=400&q=80');
+        }
+
+        .vietnam-sapa {
+            background-image: url('https://images.unsplash.com/photo-1523928300056-5b8b68719ab4?auto=format&fit=crop&w=400&q=80');
+        }
+
+        .vietnam-hcmc {
+            background-image: url('https://images.unsplash.com/photo-1516908205584-79bb6936c5f6?auto=format&fit=crop&w=400&q=80');
+        }
+
+        .vietnam-mekong {
+            background-image: url('https://images.unsplash.com/photo-1512408919501-3bb5e90ede22?auto=format&fit=crop&w=400&q=80');
+        }
+
+        .vietnam-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(139, 0, 0, 0.1);
+            border-radius: 6px;
+        }
+
+        .vietnam-features span {
+            font-size: 0.9rem;
+            color: #FFD700;
+            font-weight: 500;
+        }
+
+        .vietnam-culture-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .vietnam-culture-section h3 {
+            text-align: center;
+            color: #FFD700;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(139, 0, 0, 0.5);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .culture-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .culture-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
+
+        .culture-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .culture-item h4 {
+            color: #FFD700;
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .culture-item p {
+            color: #fff;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .vietnam-header h2 {
+                font-size: 2rem;
+            }
+            
+            .vietnam-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Chatbot styling */
+        .chatbot-wrapper {
+            position: fixed;
+            right: 20px;
+            bottom: 100px;
+            width: 400px;
+            height: 600px;
+            z-index: 1002;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        #chat-messages {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbot-header {
+            background: linear-gradient(145deg, #8B0000, #FFD700);
+            padding: 15px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #8B0000, #FFD700);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            font-size: 24px;
+            border: none;
+        }
+
+        .chatbot-wrapper.hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .chatbot-wrapper {
+                width: 100%;
+                height: 100%;
+                right: 0;
+                bottom: 0;
+                border-radius: 0;
+            }
+        }
+
+        .code-example {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            color: #fff;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        pre {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
-<body class="vietnam-bg">
-    <div class="background-overlay vietnam-bg"></div>
+<body>
+    <div class="background-overlay"></div>
     <div class="logo-row">
-      <img src="Images/logo.jpg" alt="Logo" class="logo-icon vietnam" width="200px" height="200px">
-      <p class="agency-title vietnam">Anythingg Tourism Agency</p>
-      <span class="wave vietnam">🌴</span>
+      <img src="Images/logo.jpg" alt="Logo" class="logo-icon" width="200px" height="200px">
+      <p class="agency-title">Anythingg Tourism Agency</p>
+      <span class="wave">🌴</span>
     </div>
-    <nav class="navbar vietnam">
+    <nav class="navbar">
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="south-korea.html">South Korea</a></li>
@@ -24,34 +310,249 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="tourism-content vietnam">
-            <h2>Vietnam <span style="font-size:2rem;">🇻🇳</span></h2>
-            <p class="intro">Experience the vibrant culture and stunning landscapes of Vietnam! Let our AI guide your journey. <span style="font-size:1.3rem;">🌾🏞️🍜</span></p>
-            <div class="destinations">
-                <div class="card vietnam">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ha Long Bay">
-                    <h3>Ha Long Bay</h3>
-                    <p>Limestone islands, emerald waters, and breathtaking cruises in this UNESCO World Heritage site.</p>
+        <div class="tourism-content vietnam-theme">
+            <div class="vietnam-header">
+                <h2>🇻🇳 Discover Vietnam - Đất Nước Việt Nam</h2>
+                <p class="vietnam-subtitle">From bustling cities to serene landscapes, Vietnam offers an unforgettable journey through history, culture, and natural beauty.</p>
+            </div>
+            
+            <div class="vietnam-highlights">
+                <div class="highlight-item">
+                    <span class="highlight-icon">🏛️</span>
+                    <h3>Rich Heritage</h3>
+                    <p>Ancient temples, imperial cities, and UNESCO World Heritage sites</p>
                 </div>
-                <div class="card vietnam">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Hoi An">
-                    <h3>Hoi An</h3>
-                    <p>Ancient lantern-lit streets, riverside cafes, and a blend of history and charm.</p>
+                <div class="highlight-item">
+                    <span class="highlight-icon">🍜</span>
+                    <h3>Culinary Paradise</h3>
+                    <p>From phở to bánh mì, experience authentic Vietnamese cuisine</p>
                 </div>
-                <div class="card vietnam">
-                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Ho Chi Minh City">
-                    <h3>Ho Chi Minh City</h3>
-                    <p>Dynamic city life, French colonial architecture, and delicious street food adventures.</p>
-                </div>
-                <div class="card vietnam">
-                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Sapa">
-                    <h3>Sapa</h3>
-                    <p>Terraced rice fields, mountain treks, and vibrant hill tribe culture in northern Vietnam.</p>
+                <div class="highlight-item">
+                    <span class="highlight-icon">🏔️</span>
+                    <h3>Natural Wonders</h3>
+                    <p>Ha Long Bay, Sapa mountains, and Mekong Delta adventures</p>
                 </div>
             </div>
-            <!-- Optional: Add chatbot here in the future -->
+
+            <div class="destinations">
+                <div class="card vietnam-card">
+                    <div class="card-image" style="background-image: url('https://a.cdn-hotels.com/gdcs/production144/d1394/a304783d-6dc9-4bb2-9239-d124a16a154e.jpg');"></div>
+                    <h3>Hanoi - Hà Nội</h3>
+                    <p>Explore the vibrant capital with its Old Quarter, street food, and rich history spanning over 1000 years.</p>
+                    <div class="vietnam-features">
+                        <span>🏮 Temple of Literature</span>
+                        <span>🛵 Motorbike Tours</span>
+                        <span>🥢 Street Food</span>
+                    </div>
+                </div>
+
+                <div class="card vietnam-card">
+                    <div class="card-image" style="background-image: url('https://a.cdn-hotels.com/gdcs/production183/d142/526981b8-13ee-430d-817e-4497b54c54c9.jpg');"></div>
+                    <h3>Ha Long Bay - Vịnh Hạ Long</h3>
+                    <p>Cruise through emerald waters surrounded by towering limestone pillars and hidden caves.</p>
+                    <div class="vietnam-features">
+                        <span>🚢 Luxury Cruises</span>
+                        <span>🏔️ Limestone Karsts</span>
+                        <span>🏊‍♀️ Kayaking</span>
+                    </div>
+                </div>
+
+                <div class="card vietnam-card">
+                    <div class="card-image" style="background-image: url('https://tse3.mm.bing.net/th/id/OIP.sKbXwhH7nCJ3GQRiW7AbHAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3');"></div>
+                    <h3>Hoi An - Hội An</h3>
+                    <p>Wander through lantern-lit streets of this UNESCO World Heritage ancient town.</p>
+                    <div class="vietnam-features">
+                        <span>🏮 Lantern Festival</span>
+                        <span>🏛️ Ancient Architecture</span>
+                        <span>👘 Tailor Shops</span>
+                    </div>
+                </div>
+
+                <div class="card vietnam-card">
+                    <div class="card-image" style="background-image: url('https://cdn.thecrazytourist.com/wp-content/uploads/2018/08/ccimage-shutterstock_487942870.jpg');"></div>
+                    <h3>Sapa - Sa Pa</h3>
+                    <p>Trek through terraced rice fields and experience ethnic minority cultures in the mountains.</p>
+                    <div class="vietnam-features">
+                        <span>🌾 Rice Terraces</span>
+                        <span>🥾 Mountain Trekking</span>
+                        <span>👥 Ethnic Villages</span>
+                    </div>
+                </div>
+
+                <div class="card vietnam-card">
+                    <div class="card-image" style="background-image: url('https://cdnmedia.baotintuc.vn/Upload/c2tvplmdloSDblsn03qN2Q/files/2020/11/04/thanh-pho-thu-duc-tp-ho-chi-minh-41120.jpg');"></div>
+                    <h3>Ho Chi Minh City - TP. Hồ Chí Minh</h3>
+                    <p>Experience the bustling energy of Vietnam's largest city, from markets to modern skyscrapers.</p>
+                    <div class="vietnam-features">
+                        <span>🏢 Saigon Skydeck</span>
+                        <span>🏛️ War Museums</span>
+                        <span>🛍️ Ben Thanh Market</span>
+                    </div>
+                </div>
+
+                <div class="card vietnam-card">
+                    <div class="card-image" style="background-image: url('https://static.rondreis.nl/rondreis-storage-production/media-3381-conversions-mekong-delta-xxl-webp/w1800xh1200/eyJidWNrZXQiOiJyb25kcmVpcy1zdG9yYWdlLXByb2R1Y3Rpb24iLCJrZXkiOiJtZWRpYVwvMzM4MVwvY29udmVyc2lvbnNcL21la29uZy1kZWx0YS14eGwud2VicCIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTgwMCwiaGVpZ2h0IjoxMjAwfX19');"></div>
+                    <h3>Mekong Delta - Đồng Bằng Sông Cửu Long</h3>
+                    <p>Navigate the intricate waterways and floating markets of Vietnam's rice bowl region.</p>
+                    <div class="vietnam-features">
+                        <span>🚤 Floating Markets</span>
+                        <span>🌾 Rice Paddies</span>
+                        <span>🐅 Wildlife Sanctuary</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vietnam-culture-section">
+                <h3>🎭 Vietnamese Culture & Traditions</h3>
+                <div class="culture-grid">
+                    <div class="culture-item">
+                        <span class="culture-emoji">🏮</span>
+                        <h4>Tet Festival</h4>
+                        <p>Celebrate Vietnamese New Year with fireworks, traditional foods, and family gatherings</p>
+                    </div>
+                    <div class="culture-item">
+                        <span class="culture-emoji">🎵</span>
+                        <h4>Water Puppetry</h4>
+                        <p>Experience this unique 1000-year-old art form in Hanoi's traditional theaters</p>
+                    </div>
+                    <div class="culture-item">
+                        <span class="culture-emoji">☕</span>
+                        <h4>Coffee Culture</h4>
+                        <p>Savor Vietnamese coffee, from ca phe sua da to unique egg coffee in Hanoi</p>
+                    </div>
+                    <div class="culture-item">
+                        <span class="culture-emoji">🥋</span>
+                        <h4>Ao Dai</h4>
+                        <p>Admire Vietnam's elegant traditional dress worn during special occasions</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Chatbot -->
+    <button class="chatbot-toggle" onclick="toggleChatbot()">💬</button>
+    <div class="chatbot-wrapper hidden" id="chatbot">
+        <div class="chatbot-header">
+            <span>Vietnam Travel Assistant</span>
+            <button onclick="toggleChatbot()" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+        </div>
+        <div style="height: calc(100% - 50px); display: flex; flex-direction: column; background: rgba(255, 255, 255, 0.95);">
+            <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 1rem;"></div>
+            <div style="padding: 1rem; border-top: 1px solid #ddd;">
+                <div style="display: flex; gap: 0.5rem;">
+                    <input type="text" id="user-input" placeholder="Type your message..." 
+                           style="flex: 1; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <button onclick="sendMessage()" style="padding: 0.5rem 1rem; background: linear-gradient(145deg, #8B0000, #FFD700); color: white; border: none; border-radius: 4px; cursor: pointer;">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
+    <script>
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            chatbot.classList.toggle('hidden');
+        }
+
+        async function query(message) {
+            try {
+                const response = await fetch(
+                    "https://elxine-flowise.hf.space/api/v1/prediction/2c1ea287-1ca9-4028-9c23-5984c52edd36",
+                    {
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": "Bearer qnOn-laiMqMXgOVvGnxscdHDWRdaQFiubGw9Cj70L2g"
+                        },
+                        method: "POST",
+                        body: JSON.stringify({ question: message })
+                    }
+                );
+                const result = await response.json();
+                console.log('API Response:', result); // For debugging
+                let responseText = '';
+                if (typeof result === 'string') responseText = result;
+                else if (result.answer) responseText = result.answer;
+                else if (result.response) responseText = result.response;
+                else if (result.message) responseText = result.message;
+                else if (result.text) responseText = result.text;
+                else responseText = 'I apologize, but I encountered an issue understanding the response. Please try again.';
+                
+                // Format the response text with line breaks, bold markers, and remove asterisks/underscores
+                responseText = responseText
+                    .replace(/\n/g, '<br>')
+                    .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+                    .replace(/\*/g, '')
+                    .replace(/_/g, '');
+                    
+                return responseText;
+            } catch (error) {
+                console.error('Error:', error);
+                return 'Failed to get response from chatbot. Please try again.';
+            }
+        }
+
+        function appendMessage(message, isUser = false) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.style.margin = '0.5rem 0';
+            messageDiv.style.padding = '0.5rem 1rem';
+            messageDiv.style.borderRadius = '8px';
+            messageDiv.style.maxWidth = '80%';
+            messageDiv.style.alignSelf = isUser ? 'flex-end' : 'flex-start';
+            messageDiv.style.backgroundColor = isUser ? '#8B0000' : '#FFD700';
+            messageDiv.style.color = isUser ? 'white' : 'black';
+            messageDiv.style.whiteSpace = 'pre-wrap';
+            
+            messageDiv.innerHTML = message;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Clear input
+                input.value = '';
+                
+                // Display user message
+                appendMessage(message, true);
+                
+                try {
+                    // Show loading message
+                    appendMessage('Thinking...', false);
+                    
+                    // Get bot response
+                    const response = await query(message);
+                    
+                    // Remove loading message
+                    const chatMessages = document.getElementById('chat-messages');
+                    const loadingMessage = chatMessages.lastChild;
+                    chatMessages.removeChild(loadingMessage);
+                    
+                    appendMessage(response, false);
+                } catch (error) {
+                    appendMessage('Sorry, I encountered an error. Please try again.', false);
+                }
+            }
+        }
+
+        // Allow sending message with Enter key
+        document.getElementById('user-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Add initial greeting
+        window.addEventListener('load', function() {
+            appendMessage('Hello! I\'m your Vietnam Travel Assistant. How can I help you today?', false);
+        });
+    </script>
 </body>
 </html>
+
