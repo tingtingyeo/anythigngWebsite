@@ -88,7 +88,7 @@ header img {
         }
 
         .chatbot-header {
-            background: linear-gradient(145deg, #8B0000, #FFD700);
+            background: linear-gradient(145deg, #FF69B4);
             padding: 15px;
             color: white;
             font-weight: bold;
@@ -104,7 +104,7 @@ header img {
             width: 60px;
             height: 60px;
             border-radius: 30px;
-            background: linear-gradient(145deg, #8B0000, #FFD700);
+            background: linear-gradient(145deg, #FF69B4, #FFFFFF);
             color: white;
             display: flex;
             justify-content: center;
