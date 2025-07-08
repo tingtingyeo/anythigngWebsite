@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thailand - Anythingg Tourism Agency</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="thailand.css">
 </head>
-<body>
-    <div class="background-overlay"></div>
+<body class="thailand-bg">
+    <div class="background-overlay thailand-bg"></div>
     <div class="logo-row">
-      <img src="Images/logo.jpg" alt="Logo" class="logo-icon" width="200px" height="200px">
-      <p class="agency-title">Anythingg Tourism Agency</p>
-      <span class="wave">🌴</span>
+      <img src="Images/logo.jpg" alt="Logo" class="logo-icon thailand" width="200px" height="200px">
+      <p class="agency-title thailand">Anythingg Tourism Agency</p>
+      <span class="wave thailand">🌴</span>
     </div>
-    <nav class="navbar">
+    <nav class="navbar thailand">
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="south-korea.html">South Korea</a></li>
@@ -23,15 +24,123 @@
             <li><a href="indonesia.html">Indonesia</a></li>
         </ul>
     </nav>
+     <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Thailand</h1>
+            <p>From temples to turquoise beaches — discover it all with us.</p>
+            <a href="#popular-cities" class="scroll-button">Explore Cities ↓</a>
+        </div>
+    </section>
+
+
     <div class="container">
-        <div class="tourism-content">
-            <h2>Thailand</h2>
-            <p>Enjoy the tropical paradise and rich heritage of Thailand! Let our AI help you explore.</p>
+        <div class="tourism-content" id="popular-cities">
+            <h2 style="color: var(--thai-gold); text-align: center;">🌆 Popular Cities in Thailand</h2>
+
             <div class="destinations">
-                <!-- Add Thailand-specific cards or content here -->
+                <div class="card">
+                    <img src="Images/image.jpeg"
+                        alt="Bangkok">
+                    <h3>Bangkok</h3>
+                    <p>Temples, night markets, and river cruises in the vibrant capital.</p>
+                    <div class="more-info">
+                        <p>Don’t miss the Grand Palace, Chatuchak Market, and a Chao Phraya dinner cruise!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://aem-all.accor.com/content/dam/destinations/asia-and-middle-east/th/chiang-mai/doi-inthanon-mountain-chiang-mai-thailand.jpg"
+                        alt="Chiang Mai">
+                    <h3>Chiang Mai</h3>
+                    <p>Explore the mountains, elephant sanctuaries, and old city charm.</p>
+                    <div class="more-info">
+                        <p>Visit Doi Suthep Temple, take a Thai cooking class, or explore Sunday Night Market.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://www.aleenta.com/wp-content/uploads/Phi-Phi-Islands-Day-Trip.jpg" alt="Phuket">
+                    <h3>Phuket</h3>
+                    <p>Beach paradise with island hopping, seafood, and lively nightlife.</p>
+                    <div class="more-info">
+                        <p>Hop to Phi Phi Islands, snorkel coral reefs, or enjoy Patong Beach nightlife.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://siam.recipes/cdn/shop/articles/ayutthaya-thailands-glorious-ruins-190249_grande.jpg?v=1697794607"
+                        alt="Ayutthaya">
+                    <h3>Ayutthaya</h3>
+                    <p>Historical ruins and riverside temples just north of Bangkok.</p>
+                    <div class="more-info">
+                        <p>Rent a bike to explore ancient temples, or cruise the river for sunset views.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div id="huggingface-container" class="chatbot-container">
+            <div class="custom-chatbot">
+
+                <div class="chatbot-title">
+                    <div class="title-line-1">Planning your adventure?</div>
+                    <div class="title-line-2">Ask our AI to design your perfect Thailand itinerary 🗺️✨</div>
+                </div>
+
+
+                <div class="chatbot-input-row">
+                    <input type="text" id="user-question" placeholder="Type your question..." />
+                    <button id="send-btn">Send</button>
+                </div>
+                <div id="chatbot-response" class="chatbot-response"></div>
             </div>
         </div>
     </div>
+
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="back-to-top">↑ Top</button>
+
+    <footer>
+        <p>&copy; 2025 Anythingg Tourism Agency | Crafted with 🌸 in Thailand</p>
+    </footer>
+
     <script src="app.js"></script>
+    <script>
+        async function query(data) {
+            const response = await fetch(
+                "https://melodyrp-flowise.hf.space/api/v1/prediction/55c64b7a-ec48-4fcf-99c1-1a61cf823e51",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                }
+            );
+            const result = await response.json();
+            return result;
+        }
+
+        document.getElementById('send-btn').onclick = async function () {
+            const question = document.getElementById('user-question').value;
+            const responseDiv = document.getElementById('chatbot-response');
+            responseDiv.classList.add("loading");
+            responseDiv.textContent = '';
+            try {
+                const result = await query({ question });
+                let formatted = (result.text || JSON.stringify(result))
+                    .replace(/\n/g, '<br>')
+                    .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+                    .replace(/\*/g, '')
+                    .replace(/_/g, '');
+                responseDiv.classList.remove("loading");
+                responseDiv.innerHTML = formatted;
+            } catch (e) {
+                responseDiv.textContent = 'Sorry, there was an error connecting to the AI.';
+            }
+        };
+    </script>
 </body>
 </html>

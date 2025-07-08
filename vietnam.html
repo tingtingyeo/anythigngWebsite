@@ -6,14 +6,14 @@
     <title>Vietnam - Anythingg Tourism Agency</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="background-overlay"></div>
+<body class="vietnam-bg">
+    <div class="background-overlay vietnam-bg"></div>
     <div class="logo-row">
-      <img src="Images/logo.jpg" alt="Logo" class="logo-icon" width="200px" height="200px">
-      <p class="agency-title">Anythingg Tourism Agency</p>
-      <span class="wave">🌴</span>
+      <img src="Images/logo.jpg" alt="Logo" class="logo-icon vietnam" width="200px" height="200px">
+      <p class="agency-title vietnam">Anythingg Tourism Agency</p>
+      <span class="wave vietnam">🌴</span>
     </div>
-    <nav class="navbar">
+    <nav class="navbar vietnam">
         <ul>
             <li><a href="index.html#home">Home</a></li>
             <li><a href="south-korea.html">South Korea</a></li>
@@ -24,12 +24,32 @@
         </ul>
     </nav>
     <div class="container">
-        <div class="tourism-content">
-            <h2>Vietnam</h2>
-            <p>Experience the vibrant culture and stunning landscapes of Vietnam! Let our AI guide your journey.</p>
+        <div class="tourism-content vietnam">
+            <h2>Vietnam <span style="font-size:2rem;">🇻🇳</span></h2>
+            <p class="intro">Experience the vibrant culture and stunning landscapes of Vietnam! Let our AI guide your journey. <span style="font-size:1.3rem;">🌾🏞️🍜</span></p>
             <div class="destinations">
-                <!-- Add Vietnam-specific cards or content here -->
+                <div class="card vietnam">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ha Long Bay">
+                    <h3>Ha Long Bay</h3>
+                    <p>Limestone islands, emerald waters, and breathtaking cruises in this UNESCO World Heritage site.</p>
+                </div>
+                <div class="card vietnam">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Hoi An">
+                    <h3>Hoi An</h3>
+                    <p>Ancient lantern-lit streets, riverside cafes, and a blend of history and charm.</p>
+                </div>
+                <div class="card vietnam">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Ho Chi Minh City">
+                    <h3>Ho Chi Minh City</h3>
+                    <p>Dynamic city life, French colonial architecture, and delicious street food adventures.</p>
+                </div>
+                <div class="card vietnam">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Sapa">
+                    <h3>Sapa</h3>
+                    <p>Terraced rice fields, mountain treks, and vibrant hill tribe culture in northern Vietnam.</p>
+                </div>
             </div>
+            <!-- Optional: Add chatbot here in the future -->
         </div>
     </div>
     <script src="app.js"></script>

@@ -26,12 +26,76 @@
     <div class="container">
         <div class="tourism-content">
             <h2>Indonesia</h2>
-            <p>Discover the islands and adventures of Indonesia! Let our AI help you plan your trip.</p>
+            <p>Experience the magic of Bali: lush rice terraces, vibrant culture, stunning beaches, and spiritual temples. Let our AI help you plan your unforgettable Balinese adventure!</p>
             <div class="destinations">
-                <!-- Add Indonesia-specific cards or content here -->
+                <div class="card">
+                  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ubud Rice Terraces">
+                  <h3>Ubud Rice Terraces</h3>
+                  <p>Marvel at the iconic green rice paddies and enjoy the tranquil atmosphere of Bali's cultural heart.</p>
+                </div>
+                <div class="card">
+                  <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Tanah Lot Temple">
+                  <h3>Tanah Lot Temple</h3>
+                  <p>Visit the legendary sea temple perched on a rock, especially beautiful at sunset.</p>
+                </div>
+                <div class="card">
+                  <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Kuta Beach">
+                  <h3>Kuta Beach</h3>
+                  <p>Relax on golden sands, surf the waves, or enjoy Bali's vibrant nightlife by the sea.</p>
+                </div>
+            </div>
+            <div class="bali-quote">
+              <p>"Bali is more than a place, it's a mood, it's magical. Selamat datang di Bali!"</p>
+            </div>
+        </div>
+    <div id="huggingface-container" class="chatbot-container">
+            <div class="custom-chatbot">
+                <div class="chatbot-header">
+                    <span class="chatbot-title">Ask Anythingg AI!</span>
+                </div>
+                <div class="chatbot-input-row">
+                    <input type="text" id="user-question" placeholder="Type your question..." />
+                    <button id="send-btn">Send</button>
+                </div>
+                <div id="chatbot-response" class="chatbot-response"></div>
             </div>
         </div>
     </div>
     <script src="app.js"></script>
+    <script>
+    // Hugging Face API integration
+    async function query(data) {
+        // TODO: Replace YOUR_SPACE and YOUR_CHATFLOW_ID with your own values below
+        const response = await fetch(
+            "https://ruein-flowise-c240.hf.space/api/v1/prediction/2af94009-b5d4-460c-8acb-2fc94bdfbcfc",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+        );
+        const result = await response.json();
+        return result;
+    }
+    document.getElementById('send-btn').onclick = async function() {
+        const question = document.getElementById('user-question').value;
+        const responseDiv = document.getElementById('chatbot-response');
+        responseDiv.textContent = 'Thinking...';
+        try {
+            const result = await query({ question });
+            // Quick fix: format line breaks and bold markers
+            let formatted = (result.text || JSON.stringify(result))
+                .replace(/\n/g, '<br>')
+                .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+                .replace(/\*/g, '')
+                .replace(/_/g, '');
+            responseDiv.innerHTML = formatted;
+        } catch (e) {
+            responseDiv.textContent = 'Sorry, there was an error connecting to the AI.';
+        }
+    };
+    </script>
 </body>
 </html>

@@ -1,0 +1,143 @@
+body.japan-bg {
+    background-color: #fff0f5 !important;
+}
+.background-overlay.japan-bg {
+    background: linear-gradient(120deg, #ffe4f3 0%, #ffd6e0 100%);
+    opacity: 0.92;
+    filter: blur(2px) brightness(1);
+    display: block;
+}
+
+.agency-title.japan {
+    color: #e30613;
+    font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+.logo-icon.japan {
+    border: 4px solid #e30613;
+    border-radius: 50%;
+    background: #fff;
+}
+.wave.japan {
+    font-size: 2.5rem;
+}
+.navbar.japan {
+    background: #e30613;
+    border-radius: 0 0 18px 18px;
+}
+.navbar.japan ul li a {
+    color: #fff;
+}
+.navbar.japan ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+}
+.tourism-content.japan {
+    background: rgba(255,255,255,0.85);
+    color: #e30613;
+    border: 2px solid #e30613;
+}
+.tourism-content.japan h2 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #e30613;
+    text-align: center;
+}
+.tourism-content.japan p.intro {
+    text-align:center;
+    font-size:1.2rem;
+    color:#b30000;
+}
+.card.japan {
+    border: 2px solid #e30613;
+    background: #fff;
+    color: #b30000;
+    box-shadow: 0 4px 24px 0 rgba(227,6,19,0.10);
+    width: 300px;
+    border-radius: 16px;
+    margin: 1.2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card.japan img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.card.japan h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem 0;
+    color: #e30613;
+    text-align: center;
+}
+.card.japan p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+.destinations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+}
+
+/* Chatbot container styles for Japan */
+#huggingface-container.japan, .chatbot-container.japan {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(227,6,19,0.07);
+    padding: 1.5rem;
+    position: relative;
+    z-index: 10;
+    border: 2px solid #e30613;
+}
+#huggingface-container.japan .chatbot-header {
+    background: linear-gradient(90deg, #ffe4f3 0%, #ffd6e0 100%);
+    color: #e30613;
+    border-radius: 16px 16px 0 0;
+    padding: 1.2rem 1rem 0.7rem 1rem;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px 0 rgba(227,6,19,0.08);
+}
+#huggingface-container.japan input[type="text"] {
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #e30613;
+    background: #fff0f5;
+    color: #b30000;
+    z-index: 11;
+}
+#huggingface-container.japan button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #e30613;
+    color: #fff;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+#huggingface-container.japan #chatbot-response {
+    margin-top: 1rem;
+    min-height: 2rem;
+    background: #fff0f5;
+    border-radius: 1.2rem;
+    color: #b30000;
+    font-size: 1.08rem;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 2px 8px 0 rgba(227,6,19,0.06);
+}
