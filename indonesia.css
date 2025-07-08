@@ -1,0 +1,275 @@
+.chatbot-container {
+  margin: 48px auto 0 auto;
+  text-align: center;
+  background: linear-gradient(120deg, #ffe6a7 60%, #f7c873 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(184,107,27,0.09);
+  padding: 28px 0 24px 0;
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  z-index: 2;
+}
+.custom-chatbot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.chatbot-header {
+  background: #fffbe6;
+  border-radius: 12px;
+  padding: 10px 0 6px 0;
+  width: 90%;
+  margin: 0 auto 8px auto;
+  box-shadow: 0 1px 6px rgba(184,107,27,0.07);
+}
+.chatbot-title {
+  color: #b86b1b;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.chatbot-input-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 90%;
+}
+#user-question {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #f7c873;
+  font-size: 1rem;
+  background: #fffbe6;
+  color: #3b2f1e;
+  outline: none;
+  transition: border 0.2s;
+}
+#user-question:focus {
+  border: 2px solid #b86b1b;
+}
+#send-btn {
+  background: #f7c873;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(184,107,27,0.08);
+}
+#send-btn:hover {
+  background: #b86b1b;
+  color: #fffbe6;
+}
+.chatbot-response {
+  background: #fffbe6;
+  border-radius: 10px;
+  margin: 14px auto 0 auto;
+  padding: 12px 10px;
+  min-height: 32px;
+  width: 90%;
+  color: #4d3a1a;
+  font-size: 1rem;
+  box-shadow: 0 1px 6px rgba(184,107,27,0.07);
+  text-align: left;
+  word-break: break-word;
+}
+
+body {
+  background: linear-gradient(135deg, #f9e7b4 0%, #f7c873 100%) no-repeat fixed;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  color: #3b2f1e;
+  margin: 0;
+  padding: 0;
+}
+.background-overlay {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.18;
+  z-index: 0;
+}
+
+.agency-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #b86b1b;
+  text-shadow: 1px 2px 0 #fffbe6;
+}
+.wave {
+  font-size: 2.5rem;
+  margin-left: 10px;
+  animation: wave 2s infinite;
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.container {
+  max-width: 1100px;
+  margin: 40px auto 0 auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 36px 32px 32px 32px;
+  position: relative;
+  z-index: 1;
+}
+.tourism-content h2 {
+  font-size: 2.3rem;
+  color: #b86b1b;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.tourism-content p {
+  font-size: 1.15rem;
+  color: #4d3a1a;
+  margin-bottom: 28px;
+}
+.destinations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+.card {
+  background: #fffbe6;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(184,107,27,0.08);
+  padding: 14px 12px 10px 12px;
+  width: 180px;
+  min-width: 160px;
+  max-width: 180px;
+  text-align: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 2px solid #f7c873;
+}
+.card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.card h3 {
+  color: #b86b1b;
+  margin: 10px 0 6px 0;
+  font-size: 1.2rem;
+}
+.card p {
+  color: #4d3a1a;
+  font-size: 1rem;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(184,107,27,0.13);
+}
+.bali-quote {
+  margin: 36px auto 0 auto;
+  text-align: center;
+  font-style: italic;
+  color: #b86b1b;
+  font-size: 1.15rem;
+  background: #fffbe6;
+  border-radius: 12px;
+  padding: 16px 0;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(184,107,27,0.07);
+}
+
+/* Chatbot Section */
+.chatbot-section {
+  margin: 48px auto 0 auto;
+  text-align: center;
+  background: linear-gradient(120deg, #ffe6a7 60%, #f7c873 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(184,107,27,0.09);
+  padding: 28px 0 24px 0;
+  max-width: 500px;
+}
+.chatbot-section h3 {
+  color: #b86b1b;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+#huggingface-container iframe {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(184,107,27,0.08);
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: #3d537a; /* Consistent blue for all pages */
+  padding: 2rem 0;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-bottom: 16px;
+  margin-top: 32px;
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+}
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.agency-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+.wave {
+  font-size: 2.5rem;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+    width: 100vw;
+    position: relative;
+    z-index: 2;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+.navbar a:hover {
+    color: #007bff;
+}
