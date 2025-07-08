@@ -211,3 +211,32 @@ body {
   font-size: 2.2rem;
   margin-left: 8px;
 }
+
+/* Navigation Bar Styles */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+    width: 100vw;
+    position: relative;
+    z-index: 2;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin: 0;
+    padding: 0;
+}
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+.navbar a:hover {
+    color: #007bff;
+}

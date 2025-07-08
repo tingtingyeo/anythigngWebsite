@@ -1,0 +1,68 @@
+/* south-korea.css: Country-specific styles for South Korea page */
+
+body.south-korea {
+    background: linear-gradient(120deg, #e0eafc 0%, #f9e0e3 100%);
+    min-height: 100vh;
+}
+.background-overlay.south-korea {
+    display: none;
+}
+
+/* South Korea page specific hero/section styles */
+.hero.south-korea,
+#culture.south-korea,
+#food.south-korea,
+#landmarks.south-korea {
+    color: #111;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(30,60,114,0.07);
+}
+
+header h1 {
+    color: #1e3c72 !important;
+    text-shadow: 0 2px 8px #fff;
+}
+
+header img {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Chatbot container styles */
+#custom-chatbot.south-korea {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+#custom-chatbot.south-korea h3 {
+    margin-top: 0;
+    color: #003478;
+}
+#custom-chatbot.south-korea input {
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #222;
+    z-index: 11;
+}
+#custom-chatbot.south-korea button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background: #003478;
+    color: #fff;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+#custom-chatbot.south-korea #chatbot-response {
+    margin-top: 1rem;
+    min-height: 2rem;
+}
